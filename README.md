@@ -24,15 +24,15 @@ git clone https://github.com/alqemyst/asterisk-macos.git
 
 ### Downloading and patching pjproject:
 ```bash
-wget https://github.com/pjsip/pjproject/archive/refs/tags/2.13.1.tar.gz
-tar xzf 2.13.1.tar.gz && rm 2.13.1.tar.gz
+wget https://github.com/pjsip/pjproject/archive/refs/tags/2.15.1.tar.gz
+tar xzf 2.15.1.tar.gz && rm 2.15.1.tar.gz
 
-patch -p2 --forward --directory=pjproject-2.13.1 <pjproject.patch
+patch -p2 --forward --directory=pjproject-2.15.1 <pjproject.patch
 ```
 
 ### Building pjproject:
 ```bash
-cd pjproject-2.13.1
+cd pjproject-2.15.1
 
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
 export CFLAGS="-I/opt/homebrew/include -O2 -DNDEBUG"
@@ -47,15 +47,15 @@ cd ..
 
 ### Downloading and patching asterisk:
 ```bash
-wget https://github.com/asterisk/asterisk/releases/download/20.5.0/asterisk-20.5.0.tar.gz
-tar xzf asterisk-20.5.0.tar.gz && rm asterisk-20.5.0.tar.gz
+wget https://github.com/asterisk/asterisk/releases/download/22.2.0/asterisk-22.2.0.tar.gz
+tar xzf asterisk-22.2.0.tar.gz && rm asterisk-22.2.0.tar.gz
 
-patch -p2 --forward --directory=asterisk-20.5.0 <asterisk.patch
+patch -p2 --forward --directory=asterisk-22.2.0 <asterisk.patch
 ```
 
 ### Building asterisk:
 ```bash
-cd asterisk-20.5.0/
+cd asterisk-22.2.0/
 
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/sangoma/lib/pkgconfig"
 export CFLAGS="-I/opt/homebrew/include -I/opt/sangoma/include"

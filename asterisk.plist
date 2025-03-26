@@ -20,18 +20,8 @@
 	<key>WorkingDirectory</key>
 	<string>/opt/sangoma</string>
 	<key>StandardErrorPath</key>
-	<string>/opt/sangoma/var/log/asterisk.err.log</string>
+	<string>/opt/sangoma/var/log/asterisk.log</string>
 	<key>StandardOutPath</key>
-	<string>/opt/sangoma/var/log/asterisk.out.log</string>
-	<key>HardResourceLimits</key>
-	<dict>
-		<key>NumberOfFiles</key>
-		<integer>16384</integer>
-	</dict>
-	<key>SoftResourceLimits</key>
-	<dict>
-		<key>NumberOfFiles</key>
-		<integer>16384</integer>
-	</dict>
+	<string>/opt/sangoma/var/log/asterisk.log</string>
 </dict>
 </plist>
