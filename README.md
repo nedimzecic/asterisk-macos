@@ -1,16 +1,9 @@
 # Build instructions for Asterisk on macOS (Apple Silicon)
 
-Install required homebrew packages. This is my list:
-- jansson
-- libpq
-- lua
-- openssl@3
-- pkg-config
-- portaudio
-- postgresql
-- sqlite
-- srtp
-- unixodbc
+Install required homebrew packages:
+```bash
+brew install jansson libpq lua openssl@3 pkgconf portaudio postgresql@17 sqlite srtp unixodbc
+```
 
 ### Create destination directory, I will use /opt/sangoma:
 ```bash
@@ -64,7 +57,9 @@ export LDFLAGS="-L/opt/homebrew/lib -L/opt/sangoma/lib"
 ./configure --prefix=/opt/sangoma --without-pjproject-bundled --with-pjproject --without-iodbc --with-unixodbc=/opt/homebrew/opt/unixodbc/lib --with-sqlite3=/opt/homebrew/opt/sqlite/lib
 
 make menuselect
-make && make install
+make
+make install
+make samples
 ```
 Note: During make menuselect I disable res_geolocation and res_prometheus as I had some issues with that.
 
